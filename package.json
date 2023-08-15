@@ -10,7 +10,8 @@
     "lint": "next lint",
     "storybook": "storybook dev -p 6006 -s ./public",
     "build-storybook": "storybook build",
-    "test": "jest"
+    "test": "jest",
+    "deploy-static": "npm run build && npm run export"
   },
   "dependencies": {
     "@styled-icons/material-outlined": "^10.47.0",
