@@ -1,27 +1,35 @@
 module.exports = {
-  "env": {
-    "browser": true,
-    "es2021": true
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+    jest: true,
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:storybook/recommended"],
-  "overrides": [{
-    "env": {
-      "node": true
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
+    'plugin:prettier/recommended',
+  ],
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
     },
-    "files": [".eslintrc.{js,cjs}"],
-    "parserOptions": {
-      "sourceType": "script"
-    }
-  }],
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "sourceType": "module"
+    ecmaVersion: 12,
+    sourceType: 'module',
   },
-  "plugins": ["react"],
-  "rules": {
-    "react/react-in-jsx-scope": "off",
-    "react/jsx-uses-react": "off",
-    "no-unused-vars": "off"
+  plugins: ['react'],
+  plugins: ['react', '@typescript-eslint'],
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
-
+  rules: {
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    'react/react-in-jsx-scope': 'off',
+    'no-unused-vars': 'off',
+  }
 };
